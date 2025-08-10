@@ -110,20 +110,41 @@ const App = () => {
 
   }
 
+  // const totalStrength = 0
+
+//   const totalStrength = (total=0, strength) =>{
+//     return total + strength
+// }
+
+  const totalStrength = team.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue.strength;
+  }, 0);
+  const totalAgility = team.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue.agility;
+  }, 0);
+
 
   return (
     <>
       <h1>Money : {money}</h1>
+
       {
         team.length === 0
           ? (
+            <>
             <h2>Pick some team members!</h2>
+             <h2>Total Strength: {totalStrength}</h2>
+             <h2>Total Agility: {totalAgility}</h2>
+             </>
           ) :
           (
             <>
               <h2>My Team:</h2>
+              <h2>Total Strength: {totalStrength}</h2>
+              <h2>Total Agility: {totalAgility}</h2>
 
-              {team.map((fighter) => (
+              {
+              team.map((fighter) => (
                 <div key={fighter.id}>
                   <ul>
                     <img src={fighter.img} alt={fighter.name} />
@@ -134,13 +155,14 @@ const App = () => {
                   </ul>
                   {/* <button onClick={() => handleAddFighter(zombieFighter)}>+</button> */}
                 </div>
+
               ))}
             </>
           )
       }
 
 <h2>All Zombie fighters: 
-  
+
 </h2>
       {
         zombieFighters.map((zombieFighter) => (
