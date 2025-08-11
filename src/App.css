@@ -2,6 +2,24 @@
   margin: 16px;
 }
 
+body{
+    background-color: rgb(32, 30, 30);
+    color: antiquewhite;
+
+}
+
+h1{
+  color: rgb(43, 176, 19);
+}
+
+.message{
+  color: rgb(244, 63, 63);
+}
+
+.show{
+  color: rgb(78, 86, 239);
+}
+
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -12,5 +30,21 @@ li {
   margin: 8px;
   padding: 8px;
   border: whitesmoke 3px solid;
+  /* text-align: center; */
+  /* justify-content: end; */
   border-radius: 8px;
+}
+
+img{
+  /* height: 420px;
+  width: 350px; */
+
+    width: 100px; /* Adjust as needed */
+  height: auto; 
+  border-radius: 8px; 
+  margin: 10px; 
+}
+
+button{
+  background-color: brown;
 }

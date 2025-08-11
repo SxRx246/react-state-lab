@@ -1,4 +1,16 @@
 import { useState } from "react";
+import character1 from "./assets/character1.png"
+import character2 from "./assets/character2.png"
+import character3 from "./assets/character3.png"
+import character4 from "./assets/character4.png"
+import character5 from "./assets/character5.png"
+import character6 from "./assets/character6.png"
+import character7 from "./assets/character7.png"
+import character8 from "./assets/character8.png"
+import character9 from "./assets/character9.png"
+import character10 from "./assets/character10.png"
+import "./App.css"
+
 
 const App = () => {
 
@@ -12,7 +24,7 @@ const App = () => {
         price: 12,
         strength: 6,
         agility: 4,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/0c2d6b.png',
+        img: character1
       },
       {
         id: 2,
@@ -20,7 +32,7 @@ const App = () => {
         price: 10,
         strength: 5,
         agility: 5,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/033a16.png',
+        img: character3
       },
       {
         id: 3,
@@ -28,7 +40,7 @@ const App = () => {
         price: 18,
         strength: 7,
         agility: 8,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/262c36.png',
+        img: character10
       },
       {
         id: 4,
@@ -36,7 +48,7 @@ const App = () => {
         price: 14,
         strength: 7,
         agility: 6,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/3c1e70.png',
+        img: character5
       },
       {
         id: 5,
@@ -44,7 +56,7 @@ const App = () => {
         price: 20,
         strength: 6,
         agility: 8,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/4b2900.png',
+        img: character4
       },
       {
         id: 6,
@@ -52,7 +64,7 @@ const App = () => {
         price: 15,
         strength: 5,
         agility: 7,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/5a1e02.png',
+        img: character6
       },
       {
         id: 7,
@@ -60,7 +72,7 @@ const App = () => {
         price: 16,
         strength: 6,
         agility: 5,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/5e103e.png',
+        img: character8
       },
       {
         id: 8,
@@ -68,7 +80,7 @@ const App = () => {
         price: 11,
         strength: 8,
         agility: 3,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/67060c.png',
+        img: character7
       },
       {
         id: 9,
@@ -76,7 +88,7 @@ const App = () => {
         price: 17,
         strength: 5,
         agility: 9,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/ac3220.png',
+        img: character9
       },
       {
         id: 10,
@@ -84,10 +96,13 @@ const App = () => {
         price: 22,
         strength: 7,
         agility: 6,
-        img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/e41f26.png',
-      },
+        img: character2
+      }
     ]
   )
+
+
+  const [message, setMessage] = useState(""); // State for message
 
   const handleAddFighter = (fighter) => {
     // console.log(money)
@@ -101,11 +116,15 @@ const App = () => {
       const updatedMoney = money - fighter.price
       setMoney(updatedMoney)
       console.log("money", updatedMoney)
+      setMessage("")
     }
     else {
+      setMessage("Not enough money")
       console.log("Not enough money")
     }
+
   }
+  
   const handleRemoveFighter = (fighter) => {
     const updatedTeam = team.filter((teamFighter) => teamFighter.id !== fighter.id)
     setTeam(updatedTeam)
@@ -130,22 +149,24 @@ const App = () => {
 
   return (
     <>
-      <h1>Money : {money}</h1>
+      <h1>$$$ {money}</h1>
+      <h3>{message}</h3>
 
       {
         team.length === 0
           ? (
             <>
-            <h2>Pick some team members!</h2>
-             <h2>Total Strength: {totalStrength}</h2>
-             <h2>Total Agility: {totalAgility}</h2>
+             <h2 className="show">Total Strength: {totalStrength}</h2>
+             <h2 className="show">Total Agility: {totalAgility}</h2>
+             <h2 className="message">Pick some team members!</h2>
              </>
           ) :
           (
             <>
+              <h2 className="show">Total Strength: {totalStrength}</h2>
+              <h2 className="show">Total Agility: {totalAgility}</h2>
               <h2>My Team:</h2>
-              <h2>Total Strength: {totalStrength}</h2>
-              <h2>Total Agility: {totalAgility}</h2>
+
 
               {
               team.map((fighter) => (
