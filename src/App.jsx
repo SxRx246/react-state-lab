@@ -154,7 +154,7 @@ const App = () => {
             <>
               <h2 className="show">Total Strength: {totalStrength}</h2>
               <h2 className="show">Total Agility: {totalAgility}</h2>
-              <h2>My Team:</h2>
+              <h2>My Team</h2>
 
 
               {
@@ -175,7 +175,7 @@ const App = () => {
           )
       }
 
-<h2>All Zombie fighters: 
+<h2>Choose Your Fighters
 
 </h2>
       {
