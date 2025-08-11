@@ -2,26 +2,27 @@
   margin: 16px;
 }
 
-body{
-    background-color: rgb(32, 30, 30);
-    color: antiquewhite;
+body {
+  background-color: rgb(32, 30, 30);
+  color: antiquewhite;
+  justify-content: center;
 
 }
 
-h1{
+h1 {
   color: rgb(43, 176, 19);
 }
 
-.message{
+.message {
   color: rgb(244, 63, 63);
 }
 
-.show{
+.show {
   color: rgb(78, 86, 239);
 }
 
 ul {
-  display: flex;
+  display: contents;
   flex-wrap: wrap;
 }
 
@@ -29,22 +30,43 @@ li {
   list-style: none;
   margin: 8px;
   padding: 8px;
-  border: whitesmoke 3px solid;
-  /* text-align: center; */
-  /* justify-content: end; */
+  border: rgb(246, 18, 18) 3px solid;
   border-radius: 8px;
 }
 
-img{
-  /* height: 420px;
-  width: 350px; */
+.team{
+    border: rgb(59, 172, 192) 3px solid;
 
-    width: 100px; /* Adjust as needed */
-  height: auto; 
-  border-radius: 8px; 
-  margin: 10px; 
 }
 
-button{
+img {
+  width: 400px;
+  height: 500px;
+  margin: 10px;
+}
+
+button {
   background-color: brown;
+  position: relative;
+  float: right;
+}
+
+.fighter {
+  border: 2px solid rgb(246, 18, 18);
+  border-radius: 8px;
+
+  padding: 20px;
+  margin: 20px;
+}
+
+.myTeam{
+  border: 2px solid rgb(59, 172, 192);
+  border-radius: 8px;
+
+  padding: 20px;
+  margin: 20px;
+}
+
+#myTeam{
+  background-color: rgb(40, 136, 153);
 }
